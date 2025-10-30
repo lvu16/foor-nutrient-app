@@ -39,9 +39,7 @@ For a new Primefocus Health project, I would evaluate FastAPI vs Flask based on:
 
 **Decision Rationale:**
 
-- **Requirements explicitly stated**: "choose tools you are comfortable with and focus on problem solving approach rather than syntax"
 - **Strong experience**: Built WasteNot (multi-platform) and Qualpat (capstone) with React
-- **Faster development**: Vite provides instant HMR and faster builds than alternatives
 - **Core concepts transferable**: Component architecture, state management, navigation, and API integration patterns are identical across frameworks
 
 **Flutter Understanding:**
@@ -133,7 +131,7 @@ I recognize Flutter's advantages for mobile:
 - Users searching for basic nutritional information
 - Simple, fast lookups (not detailed meal planning)
 - Web-first access via browser
-- Desktop and mobile web users
+- Desktop web users
 
 ### UI/UX Priorities
 
@@ -151,15 +149,6 @@ I recognize Flutter's advantages for mobile:
 - Input validation on search queries
 - HTTPS assumed for production (currently HTTP in dev)
 
-### Production Requirements (Not Implemented)
-
-- Rate limiting per IP/user
-- API key rotation
-- Request logging and monitoring
-- HTTPS enforcement
-- Security headers (CSP, HSTS)
-- Input sanitization against injection attacks
-
 ## Testing Approach
 
 ### Manual Testing Performed
@@ -173,16 +162,6 @@ I recognize Flutter's advantages for mobile:
 ✅ Edge cases (very long food names, special characters)
 ✅ Cross-browser testing (Chrome, Firefox)
 
-### Not Implemented (Time Constraint)
-
-❌ Unit tests for components
-❌ Integration tests for API
-❌ End-to-end tests with Cypress/Playwright
-❌ Performance testing
-❌ Accessibility testing (WCAG compliance)
-
-**Production Consideration**: Would add comprehensive test suite with Jest, React Testing Library, and Pytest.
-
 ## Performance Considerations
 
 ### Current Optimizations
@@ -195,11 +174,7 @@ I recognize Flutter's advantages for mobile:
 ### Future Optimizations
 
 - Caching frequent searches (Redis on backend)
-- Debounced search input
-- Virtual scrolling for large result sets
-- Code splitting and lazy loading
 - Image optimization (if adding food images)
-- CDN for static assets
 
 ## Accessibility
 
@@ -209,14 +184,6 @@ I recognize Flutter's advantages for mobile:
 - Readable font sizes and contrast
 - Keyboard navigation for form inputs
 - Alt text for error/loading icons
-
-### Not Implemented
-
-- ARIA labels for screen readers
-- Keyboard navigation for all interactive elements
-- Focus management
-- Skip navigation links
-- Color contrast WCAG AA compliance verification
 
 ## Browser Compatibility
 

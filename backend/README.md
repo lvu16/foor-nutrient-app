@@ -5,9 +5,9 @@ Flask REST API that serves as middleware between the React frontend and USDA Foo
 ## Tech Stack
 
 - **Framework**: Flask 3.0.0
-- **Language**: Python 3.8+
+- **Language**: Python 3.12.3
 - **External API**: USDA FoodData Central API
-- **Key Libraries**: 
+- **Key Libraries**:
   - Flask-CORS (cross-origin requests)
   - requests (HTTP client)
   - python-dotenv (environment variables)
@@ -15,6 +15,7 @@ Flask REST API that serves as middleware between the React frontend and USDA Foo
 ## Setup Instructions
 
 ### Prerequisites
+
 - Python 3.8 or higher
 - pip (Python package manager)
 - USDA FoodData Central API key
@@ -22,31 +23,37 @@ Flask REST API that serves as middleware between the React frontend and USDA Foo
 ### Installation
 
 1. **Create virtual environment:**
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 2. **Install dependencies:**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. **Configure environment variables:**
+
 ```bash
 cp .env.example .env
 ```
 
 4. **Get USDA API Key:**
+
 - Visit: https://fdc.nal.usda.gov/api-guide.html
 - Register for a free API key
 - Add your API key to `.env` file:
+
 ```
 USDA_API_KEY=your_actual_api_key_here
 USDA_API_BASE_URL=https://api.nal.usda.gov/fdc/v1
 ```
 
 5. **Run the server:**
+
 ```bash
 python main.py
 ```
@@ -56,9 +63,11 @@ Server will start on: **http://localhost:8000**
 ## API Endpoints
 
 ### GET /
+
 Root endpoint with API information
 
 **Response:**
+
 ```json
 {
   "message": "Food Information API",
@@ -72,9 +81,11 @@ Root endpoint with API information
 ```
 
 ### GET /health
+
 Health check endpoint
 
 **Response:**
+
 ```json
 {
   "status": "healthy",
@@ -83,18 +94,22 @@ Health check endpoint
 ```
 
 ### GET /api/search
+
 Search for foods by name with pagination
 
 **Query Parameters:**
+
 - `query` (string, required): Food name to search for
 - `page` (int, optional, default=1): Page number (20 results per page)
 
 **Example Request:**
+
 ```bash
 curl "http://localhost:8000/api/search?query=banana&page=1"
 ```
 
 **Example Response:**
+
 ```json
 {
   "foods": [
@@ -112,17 +127,21 @@ curl "http://localhost:8000/api/search?query=banana&page=1"
 ```
 
 ### GET /api/food/{fdc_id}
+
 Get detailed nutritional information for a specific food
 
 **Parameters:**
+
 - `fdc_id` (int): USDA FoodData Central ID
 
 **Example Request:**
+
 ```bash
 curl "http://localhost:8000/api/food/173944"
 ```
 
 **Example Response:**
+
 ```json
 {
   "fdcId": 173944,
@@ -151,6 +170,7 @@ All endpoints return appropriate HTTP status codes:
 - **500**: Internal server error
 
 **Error Response Format:**
+
 ```json
 {
   "error": "Error message description"
@@ -160,6 +180,7 @@ All endpoints return appropriate HTTP status codes:
 ## Testing
 
 **Manual Testing:**
+
 ```bash
 # Test health endpoint
 curl http://localhost:8000/health
@@ -175,6 +196,7 @@ curl "http://localhost:8000/api/search?query=chicken&page=2"
 ```
 
 ## Project Structure
+
 ```
 backend/
 ├── main.py              # Flask application with all routes

@@ -4,26 +4,29 @@ React web application for searching foods and viewing nutritional information.
 
 ## Tech Stack
 
-- **Framework**: React 18.3.1
-- **Build Tool**: Vite 6.0.1
-- **Routing**: React Router DOM 6.28.0
+- **Framework**: React 19.1.1
+- **Build Tool**: Vite 7.1.7
+- **Routing**: React Router DOM 7.9.5
 - **HTTP Client**: Native Fetch API
 - **Styling**: Inline styles (CSS-in-JS)
 
 ## Setup Instructions
 
 ### Prerequisites
+
 - Node.js 16+ and npm
 - Backend API running on http://localhost:8000
 
 ### Installation
 
 1. **Install dependencies:**
+
 ```bash
 npm install
 ```
 
 2. **Run development server:**
+
 ```bash
 npm run dev
 ```
@@ -31,6 +34,7 @@ npm run dev
 Application will start on: **http://localhost:5173**
 
 3. **Build for production:**
+
 ```bash
 npm run build
 ```
@@ -38,6 +42,7 @@ npm run build
 ## Features
 
 ### Search Page
+
 - Text input for food search
 - Real-time search with loading indicators
 - Displays search results in scrollable list
@@ -47,6 +52,7 @@ npm run build
 - Quick search suggestions (Banana, Chicken, Apple, Milk)
 
 ### Food Detail Page
+
 - Detailed nutritional information display
 - Key nutrients table (calories, protein, carbs, fat, fiber)
 - Clean, readable layout
@@ -55,6 +61,7 @@ npm run build
 - Data source attribution (USDA FDC ID)
 
 ## Project Structure
+
 ```
 frontend/
 ├── src/
@@ -83,6 +90,7 @@ frontend/
 ```
 
 ## Available Scripts
+
 ```bash
 # Start development server
 npm run dev
@@ -100,24 +108,28 @@ npm run lint
 ## Key Design Decisions
 
 ### Why Vite?
+
 - Faster development server than Create React App
 - Faster builds
 - Modern tooling with ES modules
 - Better developer experience
 
 ### Why Fetch over Axios?
+
 - Native to browsers (no extra dependency)
 - Simpler for basic REST API calls
 - Smaller bundle size
 - Modern Promise-based API
 
 ### Why Inline Styles?
+
 - No CSS module setup needed for 8-hour constraint
 - Component-scoped styling
 - Easy to maintain in small project
 - No build configuration required
 
 ### State Management
+
 - React useState for local component state
 - No Redux/Context needed for simple app
 - Props drilling is minimal with shallow component tree

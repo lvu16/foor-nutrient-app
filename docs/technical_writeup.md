@@ -14,13 +14,13 @@ This application demonstrates full-stack development skills by building a food s
 
 **Backend:**
 
-- Flask (Python 3.8+)
+- Flask (Python 3.12+)
 - USDA FoodData Central API integration
 - RESTful API design
 
 **Frontend:**
 
-- React 18.3.1
+- React 19.1.1
 - Vite (build tool)
 - React Router DOM
 - Native Fetch API
@@ -55,7 +55,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
 # Add your USDA API key to .env
-python main.py
+python3 main.py
 ```
 
 Backend runs on: **http://localhost:8000**
