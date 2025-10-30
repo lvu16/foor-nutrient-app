@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hover effects */
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+input:focus {
+  border-color: #007bff !important;
+}
