@@ -16,7 +16,7 @@ Flask REST API that serves as middleware between the React frontend and USDA Foo
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.12 or higher
 - pip (Python package manager)
 - USDA FoodData Central API key
 
