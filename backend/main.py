@@ -11,13 +11,15 @@ load_dotenv()
 app = Flask(__name__)
 
 # Enable CORS for React frontend
-CORS(app, resources={
-    r"/api/*": {
-        "origins": ["http://localhost:3000", "http://localhost:5173"],
-        "methods": ["GET", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
-    }
-})
+# CORS(app, resources={
+#     r"/api/*": {
+#         "origins": ["http://localhost:3000", "http://localhost:5173",  "http://localhost:*",],
+#         "methods": ["GET", "OPTIONS"],
+#         "allow_headers": ["Content-Type"]
+#     }
+# })
+
+CORS(app) 
 
 # Configuration
 USDA_API_KEY = os.getenv("USDA_API_KEY")
@@ -225,15 +227,16 @@ def get_food_detail(fdc_id):
         
         response.raise_for_status()
         data = response.json()
+        # print(data)
 
         # DEBUG: Print raw nutrient data to see structure
-        food_nutrients = data.get('foodNutrients', [])
-        print(f"\n=== DEBUG: Food ID {fdc_id} ===")
-        print(f"Total nutrients found: {len(food_nutrients)}")
-        print(f"First few nutrients:")
-        for i, nutrient in enumerate(food_nutrients[:5]):
-            print(f"{i}. {nutrient}")
-        print("=== END DEBUG ===\n")
+        # food_nutrients = data.get('foodNutrients', [])
+        # print(f"\n=== DEBUG: Food ID {fdc_id} ===")
+        # print(f"Total nutrients found: {len(food_nutrients)}")
+        # print(f"First few nutrients:")
+        # for i, nutrient in enumerate(food_nutrients[:5]):
+        #     print(f"{i}. {nutrient}")
+        # print("=== END DEBUG ===\n")
 
         # extract key nutrients
         food_nutrients = data.get('foodNutrients', [])
